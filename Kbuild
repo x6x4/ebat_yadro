@@ -1,0 +1,7 @@
+MODULE_NAME = my_cdev_driver
+SOURCE_FILE = my_cdev
+
+obj-m += $(MODULE_NAME).o
+$(MODULE_NAME)-y = init_$(SOURCE_FILE).o $(SOURCE_FILE).o
+
+
