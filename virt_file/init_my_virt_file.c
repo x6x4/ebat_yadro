@@ -9,9 +9,7 @@ MODULE_LICENSE("Dual BSD/GPL");
 
 static int ct_seq_show(struct seq_file *s, void *v)
 {
- 	//loff_t *spos = (loff_t *) v;
- 	//seq_printf(s, "%Ld\n", *spos);
- 	seq_printf(s, "hui");
+ 	seq_printf(s, "The simple read-only proc file\n");
 	return 0;
 }
 
