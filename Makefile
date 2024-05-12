@@ -1,7 +1,10 @@
+DIRS= cdev virt_file
+
 KDIR=/lib/modules/`uname -r`/build
 
 kbuild:
-	$(MAKE) -C $(KDIR) M=`pwd` modules
-
+	$(foreach mdir, $(DIRS), \
+		$(MAKE) -C $(KDIR) M=`pwd`/$(mdir) modules;)
 clean:
-	make -C $(KDIR) M=`pwd` clean 
+	$(foreach mdir, $(DIRS), \
+		$(MAKE) -C $(KDIR) M=`pwd`/$(mdir) clean;)
